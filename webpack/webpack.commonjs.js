@@ -8,7 +8,6 @@ const
     fs = require("fs"),
     path = require("path"),
     webpack = require("webpack"),
-    MinifyPlugin = require("babel-minify-webpack-plugin"),
     projectRoot = fs.realpathSync(process.cwd()),
     nodeExternals = require("webpack-node-externals")
 
@@ -43,7 +42,7 @@ module.exports = {
 
 
     optimization: {
-        minimize: true,
+        minimize: false,
         mergeDuplicateChunks: true,
         sideEffects: true,
         providedExports: true,
@@ -51,11 +50,6 @@ module.exports = {
         occurrenceOrder: true,
         removeEmptyChunks: true,
         removeAvailableModules: true,
-        minimizer: [
-            new MinifyPlugin({}, {
-                comments: false,
-            }),
-        ],
     },
 
 
@@ -72,11 +66,9 @@ module.exports = {
 
 
     plugins: [
-
         new webpack.DefinePlugin({
             "process.env.BABEL_ENV": JSON.stringify("production"),
         }),
-
     ],
 
 }
