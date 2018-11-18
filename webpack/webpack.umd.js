@@ -66,11 +66,14 @@ module.exports = {
 
 
     plugins: [
-
         new webpack.DefinePlugin({
             "process.env.BABEL_ENV": JSON.stringify("production"),
         }),
-
     ],
+
+
+    performance: {
+        hints: false,
+    },
 
 }
