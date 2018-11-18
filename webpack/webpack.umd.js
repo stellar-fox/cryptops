@@ -9,8 +9,7 @@ const
     path = require("path"),
     webpack = require("webpack"),
     MinifyPlugin = require("babel-minify-webpack-plugin"),
-    projectRoot = fs.realpathSync(process.cwd()),
-    nodeExternals = require("webpack-node-externals")
+    projectRoot = fs.realpathSync(process.cwd())
 
 
 
@@ -30,16 +29,11 @@ module.exports = {
 
     output: {
         filename: "[name].js",
-        path: path.resolve(__dirname, "./dist"),
+        path: path.resolve(__dirname, "../dist"),
         library: "cryptops",
         libraryTarget: "umd",
         globalObject: "(typeof self !== 'undefined' ? self : this)",
     },
-
-
-    externals: [
-        nodeExternals(),
-    ],
 
 
     optimization: {

@@ -1,6 +1,7 @@
 # build
 /dist
 /es
+/lib
 
 # jsdoc
 /jsdoc

@@ -61,6 +61,7 @@
         "dist",
         "es",
         "jsdoc",
+        "lib",
         "src",
         "test",
         "typings"
@@ -90,7 +91,7 @@
         "build": "npm run clean && npm run build:all",
         "build:all": "npm run build:es && npm run build:umd && npm run build:jsdoc",
         "build:es": "mkdirp ./es && cross-env BABEL_ENV=production babel ./src/index.js -o ./es/cryptops.js",
-        "build:umd": "cross-env BABEL_ENV=production webpack -p --config=webpack.config.js",
+        "build:umd": "cross-env BABEL_ENV=production webpack -p --config=webpack/webpack.umd.js",
         "build:jsdoc": "echo \"Generating jsdoc ...\" && jsdoc -c ./jsdoc.json -R ./README.md -r ./src/ -d ./jsdoc/",
         "clean": "npm run clean:build && npm run clean:jsdoc",
         "clean:build": "rimraf ./dist ./es",
