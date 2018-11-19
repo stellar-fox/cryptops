@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Home - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Modules</li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-@stellar-fox_cryptops.html">@stellar-fox/cryptops</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-@stellar-fox_cryptops.html#~aesDecrypt">aesDecrypt</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-@stellar-fox_cryptops.html#~aesEncrypt">aesEncrypt</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-@stellar-fox_cryptops.html#~aesNonce">aesNonce</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-@stellar-fox_cryptops.html#~decodeUUID">decodeUUID</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-@stellar-fox_cryptops.html#~decrypt">decrypt</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-@stellar-fox_cryptops.html#~deriveKey">deriveKey</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-@stellar-fox_cryptops.html#~encrypt">encrypt</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-@stellar-fox_cryptops.html#~genKey">genKey</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-@stellar-fox_cryptops.html#~genUUID">genUUID</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-@stellar-fox_cryptops.html#~passphraseDecrypt">passphraseDecrypt</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-@stellar-fox_cryptops.html#~passphraseEncrypt">passphraseEncrypt</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-@stellar-fox_cryptops.html#~random">random</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-@stellar-fox_cryptops.html#~salsaDecrypt">salsaDecrypt</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-@stellar-fox_cryptops.html#~salsaEncrypt">salsaEncrypt</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-@stellar-fox_cryptops.html#~salsaNonce">salsaNonce</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-@stellar-fox_cryptops.html#~salt32">salt32</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-@stellar-fox_cryptops.html#~salt64">salt64</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-@stellar-fox_cryptops.html#~sha256">sha256</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-@stellar-fox_cryptops.html#~sha512">sha512</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-@stellar-fox_cryptops.html#~timestamp">timestamp</a></span></li>
+</nav>
+
+<div id="main">
+    
+
+    
+
+
+
+    
+
+
+
+
+
+
+
+
+
+    
+
+
+    <section class="readme">
+        <article><h1>cryptops</h1><p>Crypto building blocks.</p>
+<p><a href="https://www.npmjs.com/package/@stellar-fox/cryptops"><img src="https://img.shields.io/npm/v/@stellar-fox/cryptops.svg" alt="npm version"></a>
+<a href="https://www.npmjs.com/package/@stellar-fox/cryptops"><img src="https://img.shields.io/npm/l/@stellar-fox/cryptops.svg" alt="npm license"></a>
+<a href="https://github.com/stellar-fox/cryptops"><img src="https://img.shields.io/github/languages/top/stellar-fox/cryptops.svg" alt="GitHub top language"></a>
+<a href="https://github.com/stellar-fox/cryptops"><img src="https://img.shields.io/github/languages/code-size/stellar-fox/cryptops.svg" alt="GitHub code size"></a>
+<a href="https://github.com/stellar-fox/cryptops"><img src="https://img.shields.io/github/tag/stellar-fox/cryptops.svg" alt="GitHub tag"></a></p>
+<pre class="prettyprint source lang-bash"><code>$ npm i @stellar-fox/cryptops</code></pre><p><br /></p>
+<h2>index</h2><ul>
+<li><a href="#foreword">foreword</a></li>
+<li><a href="#documentation">documentation</a></li>
+<li><a href="#use-the-package">use the package</a><ul>
+<li><a href="#install">install</a></li>
+<li><a href="#play-in-nodejs">play in node.js</a></li>
+<li><a href="#example-use-in-your-code">example use in your code</a></li>
+</ul>
+</li>
+<li><a href="#use-the-source">use the source</a></li>
+<li><a href="#namespace">namespace</a></li>
+<li><a href="#tests">tests</a></li>
+<li><a href="#support">support</a></li>
+<li><a href="#license">license</a></li>
+</ul>
+<p><br /></p>
+<h2>foreword</h2><p>Cryptography is hard. Cryptography is important. Cryptography should be
+more accessible.</p>
+<p>This library aims to tackle the last of the above sencences - it provides
+coherent API to use in browser as well as in server environment.</p>
+<p>All the &quot;heavy lifting&quot; was done by the authors of the following,
+magnificent projects:</p>
+<ul>
+<li><a href="https://bitwiseshiftleft.github.io/sjcl/">Stanford Javascript Crypto Library</a></li>
+<li><a href="https://tweetnacl.js.org/">TweetNaCl.js</a></li>
+<li><a href="https://github.com/crypto-browserify/crypto-browserify">crypto-browserify</a></li>
+<li><a href="https://github.com/ricmoo/scrypt-js">scrypt-js</a></li>
+</ul>
+<p><em>cryptops</em> just wraps and combines some of their parts without adding
+anything that might lessen the security level.</p>
+<p>Go ahead, <a href="https://github.com/stellar-fox/cryptops/blob/master/src/index.js">inspect the source</a> and see for yourself.</p>
+<p><br /></p>
+<h2>documentation</h2><blockquote>
+<p><a href="https://stellar-fox.github.io/cryptops/">API Reference</a></p>
+</blockquote>
+<p><br /></p>
+<h2>use the package</h2><h3>install</h3><pre class="prettyprint source lang-bash"><code>$ mkdir playground
+$ cd playground/
+$ npm init
+...
+$ npm i @stellar-fox/cryptops
+...</code></pre><p>Three builds are provided:</p>
+<ul>
+<li><a href="https://github.com/umdjs/umd">UMD</a> (in <code>dist</code> directory)</li>
+<li><a href="https://nodejs.org/docs/latest/api/modules.html#modules_modules">CommonJS</a> (in <code>lib</code> directory)</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import">ES6</a> (in <code>es</code> directory)</li>
+</ul>
+<p><br /></p>
+<h3>play in node.js</h3><pre class="prettyprint source lang-bash"><code>$ node
+></code></pre><pre class="prettyprint source lang-javascript"><code>cryptops = require(&quot;@stellar-fox/cryptops&quot;)</code></pre><p><br /></p>
+<h3>example use in your code</h3><p>For <code>utf8-string</code> <-> <code>bytes</code> <-> <code>hex-string</code> <-> <code>b64-string</code>
+encoding and decoding <a href="https://www.npmjs.com/package/@xcmats/js-toolbox">@xcmats/js-toolbox</a> can
+be used.</p>
+<pre class="prettyprint source lang-javascript"><code>import { passphraseEncrypt } from &quot;@stellar-fox/cryptops&quot;
+import { newAddress } from &quot;@stellar-fox/redshift&quot;
+import { codec } from &quot;@xcmats/js-toolbox&quot;
+
+let
+    myPassphrase = &quot;H0cus P0cus Open Sesam3 4brakadabra&quot;,
+    myPreciousSecret = newAddress().keypair.secret()
+
+passphraseEncrypt(myPassphrase, codec.stringToBytes(myPreciousSecret))
+    .then((ciphertext) => {
+        console.log(&quot;Now I can sleep peacefully: &quot;, ciphertext)
+    })</code></pre><p><br /></p>
+<h2>use the source</h2><pre class="prettyprint source lang-bash"><code>$ git clone git@github.com:stellar-fox/cryptops.git
+Cloning into 'cryptops'...
+$ cd cryptops
+$ npm i
+$ npm start
+Compiling for 'production' ...
+Hash: 8d52ae57748892e5a58f
+Version: webpack 4.25.1
+Time: 791ms
+Built at: 2018-11-19 11:04:39
+      Asset      Size  Chunks             Chunk Names
+cryptops.js  24.2 KiB       0  [emitted]  cryptops
+Entrypoint cryptops = cryptops.js
+[0] external &quot;@xcmats/js-toolbox&quot; 42 bytes {0} [built]
+[1] external &quot;sjcl&quot; 42 bytes {0} [built]
+[2] external &quot;tweetnacl&quot; 42 bytes {0} [built]
+[3] external &quot;@babel/runtime/regenerator&quot; 42 bytes {0} [built]
+[4] external &quot;@babel/runtime/helpers/asyncToGenerator&quot; 42 bytes {0} [built]
+[5] external &quot;crypto-browserify&quot; 42 bytes {0} [built]
+[6] external &quot;scrypt-js&quot; 42 bytes {0} [built]
+[7] ./src/index.js 11.4 KiB {0} [built]</code></pre><p><br /></p>
+<h2>namespace</h2><pre class="prettyprint source lang-javascript"><code>cryptops</code></pre><blockquote>
+<pre class="prettyprint source lang-javascript"><code>{ random: [Function],
+  sha256: [Function],
+  salt32: [Function: salt32],
+  genKey: [Function: genKey],
+  sha512: { [Function] hashLength: 64 },
+  salt64: [Function: salt64],
+  deriveKey: [Function: deriveKey],
+  timestamp: [Function: timestamp],
+  genUUID: [Function: genUUID],
+  decodeUUID: [Function: decodeUUID],
+  salsaNonce: [Function: salsaNonce],
+  salsaEncrypt: [Function: salsaEncrypt],
+  salsaDecrypt: [Function: salsaDecrypt],
+  aesNonce: [Function: aesNonce],
+  aesEncrypt: [Function: aesEncrypt],
+  aesDecrypt: [Function: aesDecrypt],
+  encrypt: { [Function: encrypt] MAGIC: '0xDAB0', VERSION: '0x0001' },
+  decrypt: { [Function: decrypt] MAGIC: '0xDAB0', VERSION: '0x0001' },
+  passphraseEncrypt: [Function: passphraseEncrypt],
+  passphraseDecrypt: [Function: passphraseDecrypt],
+  version: '1.0.0' }</code></pre></blockquote>
+<p><br /></p>
+<h2>tests</h2><pre class="prettyprint source lang-bash"><code>$ npm run test
+
+  uuid test
+    ✓ should generate uuid
+    ✓ should decode uuid
+
+  passphrase encrypt/decrypt test
+    ✓ should generate content (5386ms)
+    ✓ should encrypt (2407ms)
+    ✓ should have different ciphertexts
+    ✓ should decrypt (7258ms)
+    ✓ should match content (67ms)
+    ✓ should not decrypt with a wrong passphrase (2922ms)
+
+
+  8 passing (18s)</code></pre><p><br /></p>
+<h2>support</h2><pre class="prettyprint source"><code>GAUWLOIHFR2E52DYNEYDO6ZADIDVWZKK3U77V7PMFBNOIOBNREQBHBRR</code></pre><p><br /></p>
+<h2>license</h2><p><strong>cryptops</strong> are released under the Apache License, Version 2.0. See the
+<a href="https://github.com/stellar-fox/cryptops/blob/master/LICENSE">LICENSE</a>
+for more details.</p></article>
+    </section>
+
+
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Mon Nov 19 2018 16:08:30 GMT+0100 (CET) using the Minami theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>
