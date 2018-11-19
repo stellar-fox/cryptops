@@ -21,6 +21,7 @@ $ npm i @stellar-fox/cryptops
 
 * [foreword](#foreword)
 * [documentation](#documentation)
+* [play in your browser](#play-in-your-browser)
 * [use the package](#use-the-package)
     - [install](#install)
     - [play in node.js](#play-in-nodejs)
@@ -65,6 +66,25 @@ Go ahead, [inspect the source][libsource] and see for yourself.
 ## documentation
 
 > [API Reference](https://stellar-fox.github.io/cryptops/)
+
+<br />
+
+
+
+
+## play in your browser
+
+> [RunKit with @stellar-fox/cryptops](https://npm.runkit.com/@stellar-fox/cryptops)
+
+
+* encrypting text using passphrase:
+
+    https://runkit.com/xcmats/cryptops.passphraseencrypt
+
+
+* decrypting text using passphrase:
+
+    https://runkit.com/xcmats/cryptops.passphrasedecrypt
 
 <br />
 
