@@ -417,8 +417,8 @@ export const encrypt = (key, message) => {
         codec.hexToBytes(encdec.MAGIC),
         codec.hexToBytes(encdec.VERSION),
         func.pipe(message)(
-            func.partial(salsaEncrypt)(key.slice(0, 32)),
-            func.partial(aesEncrypt)(key.slice(32))
+            func.partial(salsaEncrypt)(array.take(32)(key)),
+            func.partial(aesEncrypt)(array.drop(32)(key))
         )
     )
 }
@@ -470,12 +470,12 @@ export const decrypt = (key, ciphertext) => {
             codec.hexToBytes(encdec.MAGIC),
             codec.hexToBytes(encdec.VERSION)
         ),
-        ciphertext.slice(0, 4)
+        array.take(4)(ciphertext)
     )) throw new Error("decrypt: Magic byte or version mismatch.")
 
-    return func.pipe(ciphertext.slice(4))(
-        func.partial(aesDecrypt)(key.slice(32)),
-        func.partial(salsaDecrypt)(key.slice(0, 32))
+    return func.pipe(array.drop(4)(ciphertext))(
+        func.partial(aesDecrypt)(array.drop(32)(key)),
+        func.partial(salsaDecrypt)(array.take(32)(key))
     )
 }
 Object.freeze(Object.assign(decrypt, encdec))
