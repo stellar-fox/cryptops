@@ -140,11 +140,13 @@ export const salt64 = () => func.compose(sha512, random)(256)
 
 
 /**
+ * Key derivation options object type definition.
+ *
  * @typedef {Object} KeyDerivationOptions
- * @property {Number} [count=2**12] Difficulty.
- * @property {Number} [blockSize=8]
- * @property {Number} [parallelization=1]
- * @property {Number} [derivedKeySize=64]
+ * @property {Number} [count=2**12] Difficulty (CPU/memory cost)
+ * @property {Number} [blockSize=8] The block size
+ * @property {Number} [parallelization=1] Parallelization cost
+ * @property {Number} [derivedKeySize=64] Derived key size in bytes
  * @property {Function} [progressCallback=()=>false]
  */
 
