@@ -23,8 +23,9 @@ describe("passphrase encrypt/decrypt test", () => {
 
     var
         passphrase = string.random(32),
+        stringContent = null,
         content = null,
-        contentLength = 4*1024*1024,
+        contentLength = 6*1024*1024,
         ciphertext = null, ciphertext2 = null,
         decryptedContent = null,
         decryptedContent2 = null,
@@ -33,7 +34,9 @@ describe("passphrase encrypt/decrypt test", () => {
 
 
     it("should generate content", () => {
-        content = codec.stringToBytes(string.random(contentLength))
+        stringContent = string.random(contentLength)
+        content = codec.stringToBytes(stringContent)
+        assert.equal(stringContent.length, contentLength)
         assert.equal(content.length, contentLength)
     }).timeout(t)
 
@@ -92,43 +95,37 @@ describe("passphrase encrypt/decrypt test", () => {
         assert.deepEqual(content, decryptedContent3)
         assert.deepEqual(content, decryptedContent4)
         assert.equal(
-            codec.bytesToString(content),
+            stringContent,
             codec.bytesToString(decryptedContent)
         )
         assert.equal(
-            codec.bytesToString(content),
+            stringContent,
             codec.bytesToString(decryptedContent2)
         )
         assert.equal(
-            codec.bytesToString(content),
+            stringContent,
             codec.bytesToString(decryptedContent3)
         )
         assert.equal(
-            codec.bytesToString(content),
+            stringContent,
             codec.bytesToString(decryptedContent4)
         )
     }).timeout(t)
 
 
-    it("should not decrypt with wrong passphrase", async () => {
-        var surelyWrongPassphrase =
-            passphrase
-                .split(string.empty())
-                .reverse()
-                .join(string.empty())
-
+    it("should not decrypt with a wrong passphrase", async () => {
         try {
             assert.equal(
                 null,
                 await passphraseDecrypt(
-                    surelyWrongPassphrase,
+                    string.random(32),
                     ciphertext
                 )
             )
             assert.equal(
                 null,
                 await passphraseDecrypt(
-                    surelyWrongPassphrase,
+                    string.random(32),
                     ciphertext2
                 )
             )
