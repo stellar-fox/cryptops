@@ -6,6 +6,8 @@
 var
     assert = require("assert"),
     {
+        genUUID,
+        decodeUUID,
         passphraseEncrypt,
         passphraseDecrypt,
     } = require("../lib/cryptops"),
@@ -15,6 +17,43 @@ var
         type,
     } = require("@xcmats/js-toolbox"),
     t = 20000
+
+
+
+
+describe("uuid test", () => {
+
+    var
+        uuid = null, uuid2 = null,
+        decodeduuid = null, decodeduuid2 = null
+
+
+    it("should generate uuid", () => {
+        uuid = genUUID()
+        uuid2 = genUUID()
+        assert.notEqual(uuid, null)
+        assert.notEqual(uuid2, null)
+        assert.notEqual(uuid, uuid2)
+        assert.notDeepEqual(uuid, uuid2)
+    })
+
+
+    it("should decode uuid", () => {
+        decodeduuid = decodeUUID(uuid)
+        decodeduuid2 = decodeUUID(uuid2)
+        assert.notEqual(decodeduuid, null)
+        assert.notEqual(decodeduuid2, null)
+        assert.notEqual(decodeduuid, decodeduuid2)
+        assert.notDeepEqual(decodeduuid, decodeduuid2)
+        assert.ok(decodeduuid.timestamp.getFullYear() >= 2018)
+        assert.ok(decodeduuid2.timestamp.getFullYear() >= 2018)
+        assert.equal(decodeduuid.uaId.length, 8)
+        assert.equal(decodeduuid2.uaId.length, 8)
+        assert.equal(decodeduuid.rnd.length, 12)
+        assert.equal(decodeduuid2.rnd.length, 12)
+    })
+
+})
 
 
 
