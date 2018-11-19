@@ -545,7 +545,7 @@ export const passphraseEncrypt = async (
  * @returns {Promise.<Uint8Array>|Promise.<Null>} byte representation
  *      of a decrypted content or `null` if decryption is not possible.
  */
-export const passphraseDecrypt = async (
+export const passphraseDecrypt = (
     passphrase = string.empty(),
     ciphertext = string.empty(),
     {
@@ -555,21 +555,20 @@ export const passphraseDecrypt = async (
         derivedKeySize = 64,
         progressCallback = (_p) => false,
     } = {}
-) => {
-    let cipherBytes = codec.b64dec(ciphertext)
-
-    return decrypt(
-        await deriveKey(
-            func.pipe(passphrase)(
-                (p) => p.normalize("NFC"),
-                codec.stringToBytes
+) => (
+    async (cipherBytes) =>
+        decrypt(
+            await deriveKey(
+                func.pipe(passphrase)(
+                    (p) => p.normalize("NFC"),
+                    codec.stringToBytes
+                ),
+                array.take(64)(cipherBytes),
+                {
+                    count, blockSize, parallelization,
+                    derivedKeySize, progressCallback,
+                }
             ),
-            cipherBytes.slice(0, 64),
-            {
-                count, blockSize, parallelization,
-                derivedKeySize, progressCallback,
-            }
-        ),
-        cipherBytes.slice(64)
-    )
-}
+            array.drop(64)(cipherBytes)
+        )
+)(codec.b64dec(ciphertext))
