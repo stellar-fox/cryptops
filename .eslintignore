@@ -1,5 +1,9 @@
 dist/*
 es/*
 jsdoc/*
+lib/*
 node_modules/*
+scripts/*
+test/*
 typings/*
+webpack/*
