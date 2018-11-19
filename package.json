@@ -59,6 +59,7 @@
         "npm": ">=6.0.0"
     },
     "files": [
+        ".eslintrc",
         "dist",
         "es",
         "jsdoc",
