@@ -12,7 +12,6 @@ import {
     array,
     codec,
     func,
-    handleException,
     string,
     type,
     utils,
@@ -219,16 +218,20 @@ export const genUUID = () => codec.concatBytes(
     timestamp(),
 
     // 32 bits (4 bytes): truncated `sha256` sum of userAgent string
-    func.compose(
-        sha256,
-        codec.stringToBytes
-    )(
-        handleException(
+    func.pipe(
+        utils.handleException(
             () => utils.isBrowser() ?
                 navigator.userAgent :
-                "non-browser-env"
+                "non-browser-env",
+            () => "unknown-env"
         )
-    ).slice(0, 4),
+    )(
+        codec.stringToBytes,
+        sha256,
+        (b) => Array.from(b),
+        array.takeEvery(8),
+        (a) => Uint8Array.from(a)
+    ),
 
     // 48 random bits (6 bytes)
     random(6)
