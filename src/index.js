@@ -152,6 +152,23 @@ export const salt64 = () => func.compose(sha512, random)(256)
 
 
 /**
+ * Default values for KeyDerivationOptions.
+ *
+ * @private
+ * @constant {KeyDerivationOptions} defKDO
+ */
+const defKDO = Object.freeze({
+    count: 2**16,        // `N` - the CPU/memory cost
+    blockSize: 8,        // `r` - the block size
+    parallelization: 1,  // `p` - parallelization cost
+    derivedKeySize: 64,  // derived key size in bytes
+    progressCallback: (_p) => false,
+})
+
+
+
+
+/**
  * Password-based key-derivation.
  * Uses `scrypt` implemented in `ricmoo/scrypt-js`.
  *
@@ -167,11 +184,11 @@ export const deriveKey = (
     pass = Uint8Array.from([]),
     salt = (new Uint8Array(64)).fill(0),
     {
-        count = 2**16,
-        blockSize = 8,
-        parallelization = 1,
-        derivedKeySize = 64,
-        progressCallback = (_p) => false,
+        count = defKDO.count,
+        blockSize = defKDO.blockSize,
+        parallelization = defKDO.parallelization,
+        derivedKeySize = defKDO.derivedKeySize,
+        progressCallback = defKDO.progressCallback,
     } = {}
 ) =>
     new Promise(
@@ -377,10 +394,10 @@ export const aesDecrypt = (key, ciphertext) => (
 
 
 /**
- * Needed constants for encrypt/decrypt functions.
+ * Needed constant/headers for encrypt/decrypt functions.
  *
  * @private
- * @constant encdec
+ * @constant {Object} encdec
  */
 const encdec = Object.freeze({
     MAGIC: "0xDAB0",
@@ -516,11 +533,11 @@ export const passphraseEncrypt = async (
     message = Uint8Array.from([]),
     {
         salt = salt64(),
-        count = 2**16,
-        blockSize = 8,
-        parallelization = 1,
-        derivedKeySize = 64,
-        progressCallback = (_p) => false,
+        count = defKDO.count,
+        blockSize = defKDO.blockSize,
+        parallelization = defKDO.parallelization,
+        derivedKeySize = defKDO.derivedKeySize,
+        progressCallback = defKDO.progressCallback,
     } = {}
 ) =>
     func.pipe(
@@ -564,11 +581,11 @@ export const passphraseDecrypt = (
     passphrase = string.empty(),
     ciphertext = string.empty(),
     {
-        count = 2**16,
-        blockSize = 8,
-        parallelization = 1,
-        derivedKeySize = 64,
-        progressCallback = (_p) => false,
+        count = defKDO.count,
+        blockSize = defKDO.blockSize,
+        parallelization = defKDO.parallelization,
+        derivedKeySize = defKDO.derivedKeySize,
+        progressCallback = defKDO.progressCallback,
     } = {}
 ) => (
     async (cipherBytes) =>
