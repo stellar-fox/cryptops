@@ -7,5 +7,6 @@
 Object.assign(
     require("repl").start({}).context, {
         cryptops: require("../lib/cryptops.js"),
+        codec: require("@xcmats/js-toolbox").codec,
     }
 )
