@@ -2,8 +2,15 @@
 
 Crypto building blocks.
 
+[![npm version](https://img.shields.io/npm/v/@stellar-fox/cryptops.svg)](https://www.npmjs.com/package/@stellar-fox/cryptops)
+[![npm license](https://img.shields.io/npm/l/@stellar-fox/cryptops.svg)](https://www.npmjs.com/package/@stellar-fox/cryptops)
 [![GitHub top language](https://img.shields.io/github/languages/top/stellar-fox/cryptops.svg)](https://github.com/stellar-fox/cryptops)
 [![GitHub code size](https://img.shields.io/github/languages/code-size/stellar-fox/cryptops.svg)](https://github.com/stellar-fox/cryptops)
+[![GitHub tag](https://img.shields.io/github/tag/stellar-fox/cryptops.svg)](https://github.com/stellar-fox/cryptops)
+
+```bash
+$ npm i @stellar-fox/cryptops
+```
 
 <br />
 
@@ -12,6 +19,7 @@ Crypto building blocks.
 
 ## index
 
+* [foreword](#foreword)
 * [documentation](#documentation)
 * [use the package](#use-the-package)
     - [install](#install)
@@ -22,6 +30,32 @@ Crypto building blocks.
 * [tests](#tests)
 * [support](#support)
 * [license](#license)
+
+<br />
+
+
+
+
+## foreword
+
+Cryptography is hard. Cryptography is important. Cryptography should be
+more accessible.
+
+This library aims to tackle the last of the above sencences - it provides
+coherent API to use in browser as well as in server environment.
+
+All the "heavy lifting" was done by the authors of the following,
+magnificent projects:
+
+* [Stanford Javascript Crypto Library][sjcl]
+* [TweetNaCl.js][tweetnacl]
+* [crypto-browserify][cryptobrowserify]
+* [scrypt-js][scryptjs]
+
+_cryptops_ just wraps and combines some of their parts without adding
+anything that might lessen the security level.
+
+Go ahead, [inspect the source][libsource] and see for yourself.
 
 <br />
 
@@ -206,3 +240,8 @@ for more details.
 
 
 [js_toolbox]: https://www.npmjs.com/package/@xcmats/js-toolbox
+[sjcl]: https://bitwiseshiftleft.github.io/sjcl/
+[tweetnacl]: https://tweetnacl.js.org/
+[cryptobrowserify]: https://github.com/crypto-browserify/crypto-browserify
+[scryptjs]: https://github.com/ricmoo/scrypt-js
+[libsource]: https://github.com/stellar-fox/cryptops/blob/master/src/index.js
