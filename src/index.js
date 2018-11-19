@@ -250,9 +250,22 @@ export const genUUID = () => codec.concatBytes(
  * @returns {Object}
  */
 export const decodeUUID = (uuid) => ({
-    timestamp: new Date(parseInt(codec.bytesToHex(uuid.slice(0, 6)), 16)),
-    uaId: codec.bytesToHex(uuid.slice(6, 6 + 4)),
-    rnd: codec.bytesToHex(uuid.slice(10, 10 + 6)),
+    timestamp: func.pipe(uuid)(
+        array.take(6),
+        codec.bytesToHex,
+        func.partial(func.rearg(parseInt)(1, 0))(16),
+        (ms) => new Date(ms)
+    ),
+    uaId: func.pipe(uuid)(
+        array.drop(6),
+        array.take(4),
+        codec.bytesToHex
+    ),
+    rnd: func.pipe(uuid)(
+        array.drop(10),
+        array.take(6),
+        codec.bytesToHex
+    ),
 })
 
 
