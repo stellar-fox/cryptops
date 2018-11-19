@@ -87,7 +87,7 @@ declare module "@stellar-fox/cryptops" {
     export function deriveKey (
         pass: Uint8Array,
         salt: Uint8Array,
-        opts: KeyDerivationOptions
+        opts?: KeyDerivationOptions
     ): Promise<Uint8Array>;
 
 
