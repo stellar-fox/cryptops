@@ -216,9 +216,12 @@ export const deriveKey = (
  * @function timestamp
  * @returns {Uint8Array}
  */
-export const timestamp = () => func.compose(
-    codec.hexToBytes, string.padLeft
-)(Date.now().toString(16), 6*2, "0")
+export const timestamp = () =>
+    func.pipe(Date.now())(
+        (d) => d.toString(16),
+        func.partial(func.rearg(string.padLeft)(1, 2, 0))(6*2, "0"),
+        codec.hexToBytes
+    )
 
 
 
