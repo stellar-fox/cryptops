@@ -84,6 +84,12 @@ $ npm i @stellar-fox/cryptops
 ...
 ```
 
+Three builds are provided:
+
+* [UMD][umdjs] (in `dist` directory)
+* [CommonJS][commonjs] (in `lib` directory)
+* [ES6][esmodules] (in `es` directory)
+
 <br />
 
 
@@ -245,3 +251,7 @@ for more details.
 [cryptobrowserify]: https://github.com/crypto-browserify/crypto-browserify
 [scryptjs]: https://github.com/ricmoo/scrypt-js
 [libsource]: https://github.com/stellar-fox/cryptops/blob/master/src/index.js
+[umdjs]: https://github.com/umdjs/umd
+[commonjs]: https://nodejs.org/docs/latest/api/modules.html#modules_modules
+[esmodules]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import
+
