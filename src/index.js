@@ -225,7 +225,7 @@ export const timestamp = () => func.compose(
 
 /**
  * Generate 128 bits UUID. Comprised of:
- * - 48 bits of miliseconds since epoch
+ * - 48 bits of milliseconds since epoch
  * - 32 bits of truncated `sha256` sum of userAgent string
  * - 48 random bits
  *
@@ -234,7 +234,7 @@ export const timestamp = () => func.compose(
  */
 export const genUUID = () => codec.concatBytes(
 
-    // 48 bits (6 bytes): timestamp - miliseconds since epoch
+    // 48 bits (6 bytes): timestamp - milliseconds since epoch
     timestamp(),
 
     // 32 bits (4 bytes): truncated `sha256` sum of userAgent string
