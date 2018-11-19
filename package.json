@@ -113,5 +113,5 @@
         "test": "npm run lint && mocha"
     },
     "typings": "typings/cryptops.d.ts",
-    "version": "1.0.0"
+    "version": "1.0.1"
 }
