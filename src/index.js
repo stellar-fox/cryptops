@@ -604,3 +604,13 @@ export const passphraseDecrypt = (
             array.drop(64)(cipherBytes)
         )
 )(codec.b64dec(ciphertext))
+
+
+
+
+/**
+ * Library version.
+ *
+ * @constant {String} version
+ */
+export { version } from "../package.json"

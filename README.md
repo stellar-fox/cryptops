@@ -90,7 +90,8 @@ cryptops
 >   encrypt: { [Function: encrypt] MAGIC: '0xDAB0', VERSION: '0x0001' },
 >   decrypt: { [Function: decrypt] MAGIC: '0xDAB0', VERSION: '0x0001' },
 >   passphraseEncrypt: [Function: passphraseEncrypt],
->   passphraseDecrypt: [Function: passphraseDecrypt] }
+>   passphraseDecrypt: [Function: passphraseDecrypt],
+>   version: '1.0.0' }
 > ```
 
 <br />

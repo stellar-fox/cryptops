@@ -99,7 +99,7 @@
         "clean:build": "npm run clean:commonjs && npm run clean:es && npm run clean:umd",
         "clean:commonjs": "rimraf ./lib",
         "clean:es": "rimraf ./es",
-        "clean:umd": "rimraf ./umd",
+        "clean:umd": "rimraf ./dist",
         "clean:jsdoc": "rimraf ./jsdoc",
         "clean:modules": "rimraf package-lock.json && rimraf node_modules",
         "deploy": "gh-pages -d jsdoc --message 'gh-pages update'",
