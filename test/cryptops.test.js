@@ -35,6 +35,8 @@ describe("uuid test", () => {
         assert.notEqual(uuid2, null)
         assert.notEqual(uuid, uuid2)
         assert.notDeepEqual(uuid, uuid2)
+        assert.equal(uuid.length, 16)
+        assert.equal(uuid2.length, 16)
     })
 
 
