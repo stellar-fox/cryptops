@@ -9,6 +9,7 @@
 
 
 import {
+    array,
     codec,
     func,
     handleException,
@@ -296,12 +297,12 @@ export const salsaEncrypt = (key, message) => {
  * @param {Uint8Array} ciphertext A content to decrypt.
  * @returns {(Uint8Array|null)} Decrypted message or null.
  */
-export const salsaDecrypt = (key, ciphertext) => {
-    let iv = ciphertext.slice(0, naclSecretbox.nonceLength)
-    return naclSecretbox.open(
-        ciphertext.slice(naclSecretbox.nonceLength), iv, key
+export const salsaDecrypt = (key, ciphertext) =>
+    naclSecretbox.open(
+        array.drop(naclSecretbox.nonceLength)(ciphertext),
+        array.take(naclSecretbox.nonceLength)(ciphertext),
+        key
     )
-}
 
 
 
