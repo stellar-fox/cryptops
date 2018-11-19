@@ -75,7 +75,7 @@ declare module "@stellar-fox/cryptops" {
         parallelization?: number;
         derivedKeySize?: number;
         progressCallback?: Function;
-    };
+    }
 
 
 
