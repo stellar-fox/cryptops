@@ -211,7 +211,7 @@ export const deriveKey = (
 
 
 /**
- * Generate 48 bits (6 bytes) timestamp - miliseconds since epoch
+ * Generate 48 bits (6 bytes) timestamp - milliseconds since epoch.
  *
  * @function timestamp
  * @returns {Uint8Array}
@@ -483,7 +483,7 @@ Object.freeze(Object.assign(encrypt, encdec))
  * @see {@link https://bit.ly/toolboxcodec}
  * @see {@link https://bit.ly/toolboxfunc}
  * @param {Uint8Array} key 512 bits (64 bytes) decryption key.
- * @param {Uint8Array} message A content to encrypt.
+ * @param {Uint8Array} ciphertext A content to decrypt.
  * @returns {Uint8Array|Null} byte representation
  *      of a decrypted content or `null` if decryption is not possible.
  */
@@ -574,7 +574,7 @@ export const passphraseEncrypt = async (
  * @async
  * @function passphraseDecrypt
  * @param {String} passphrase A password to derive key from.
- * @param {String} message A base64-encoded content to decrypt.
+ * @param {String} ciphertext A base64-encoded content to decrypt.
  * @param {KeyDerivationOptions} [opts={}] @see KeyDerivationOptions.
  * @returns {Promise.<Uint8Array>|Promise.<Null>} byte representation
  *      of a decrypted content or `null` if decryption is not possible.
