@@ -279,10 +279,9 @@ export const salsaNonce = () => codec.concatBytes(
  * @param {Uint8Array} message A content to encrypt.
  * @returns {Uint8Array} Initialization Vector concatenated with Ciphertext.
  */
-export const salsaEncrypt = (key, message) => {
-    let iv = salsaNonce()
-    return codec.concatBytes(iv, naclSecretbox(message, iv, key))
-}
+export const salsaEncrypt = (key, message) => (
+    (iv) => codec.concatBytes(iv, naclSecretbox(message, iv, key))
+)(salsaNonce())
 
 
 
