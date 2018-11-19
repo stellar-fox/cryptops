@@ -12,8 +12,85 @@ Crypto building blocks.
 
 ## index
 
+* [documentation](#documentation)
+* [use the source](#use-the-source)
+* [namespace](#namespaces)
 * [support](#support)
 * [license](#license)
+
+<br />
+
+
+
+
+## documentation
+
+> [API Reference](https://stellar-fox.github.io/cryptops/)
+
+<br />
+
+
+
+
+## use the source
+
+```bash
+$ git clone git@github.com:stellar-fox/cryptops.git
+Cloning into 'cryptops'...
+$ cd cryptops
+$ npm i
+$ npm start
+Compiling for 'production' ...
+Hash: 8d52ae57748892e5a58f
+Version: webpack 4.25.1
+Time: 791ms
+Built at: 2018-11-19 11:04:39
+      Asset      Size  Chunks             Chunk Names
+cryptops.js  24.2 KiB       0  [emitted]  cryptops
+Entrypoint cryptops = cryptops.js
+[0] external "@xcmats/js-toolbox" 42 bytes {0} [built]
+[1] external "sjcl" 42 bytes {0} [built]
+[2] external "tweetnacl" 42 bytes {0} [built]
+[3] external "@babel/runtime/regenerator" 42 bytes {0} [built]
+[4] external "@babel/runtime/helpers/asyncToGenerator" 42 bytes {0} [built]
+[5] external "crypto-browserify" 42 bytes {0} [built]
+[6] external "scrypt-js" 42 bytes {0} [built]
+[7] ./src/index.js 11.4 KiB {0} [built]
+```
+
+<br />
+
+
+
+
+## namespace
+
+```javascript
+cryptops
+```
+
+> ```javascript
+> { random: [Function],
+>   sha256: [Function],
+>   salt32: [Function: salt32],
+>   genKey: [Function: genKey],
+>   sha512: { [Function] hashLength: 64 },
+>   salt64: [Function: salt64],
+>   deriveKey: [Function: deriveKey],
+>   timestamp: [Function: timestamp],
+>   genUUID: [Function: genUUID],
+>   decodeUUID: [Function: decodeUUID],
+>   salsaNonce: [Function: salsaNonce],
+>   salsaEncrypt: [Function: salsaEncrypt],
+>   salsaDecrypt: [Function: salsaDecrypt],
+>   aesNonce: [Function: aesNonce],
+>   aesEncrypt: [Function: aesEncrypt],
+>   aesDecrypt: [Function: aesDecrypt],
+>   encrypt: { [Function: encrypt] MAGIC: '0xDAB0', VERSION: '0x0001' },
+>   decrypt: { [Function: decrypt] MAGIC: '0xDAB0', VERSION: '0x0001' },
+>   passphraseEncrypt: [Function: passphraseEncrypt],
+>   passphraseDecrypt: [Function: passphraseDecrypt] }
+> ```
 
 <br />
 
