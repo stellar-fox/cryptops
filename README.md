@@ -13,6 +13,10 @@ Crypto building blocks.
 ## index
 
 * [documentation](#documentation)
+* [use the package](#use-the-package)
+    - [install](#install)
+    - [play in node.js](#play-in-nodejs)
+    - [example use in your code](#example-use-in-your-code)
 * [use the source](#use-the-source)
 * [namespace](#namespace)
 * [tests](#tests)
@@ -27,6 +31,62 @@ Crypto building blocks.
 ## documentation
 
 > [API Reference](https://stellar-fox.github.io/cryptops/)
+
+<br />
+
+
+
+
+## use the package
+
+### install
+
+```bash
+$ mkdir playground
+$ cd playground/
+$ npm init
+...
+$ npm i @stellar-fox/cryptops
+...
+```
+
+<br />
+
+
+### play in node.js
+
+```bash
+$ node
+>
+```
+
+```javascript
+cryptops = require("@stellar-fox/cryptops")
+```
+
+<br />
+
+
+### example use in your code
+
+For `utf8-string` <-> `bytes` <-> `hex-string` <-> `b64-string`
+encoding and decoding [@xcmats/js-toolbox][js_toolbox] can
+be used.
+
+```javascript
+import { passphraseEncrypt } from "@stellar-fox/cryptops"
+import { newAddress } from "@stellar-fox/redshift"
+import { codec } from "@xcmats/js-toolbox"
+
+let
+    myPassphrase = "H0cus P0cus Open Sesam3 4brakadabra",
+    myPreciousSecret = newAddress().keypair.secret()
+
+passphraseEncrypt(myPassphrase, codec.stringToBytes(myPreciousSecret))
+    .then((ciphertext) => {
+        console.log("Now I can sleep peacefully: ", ciphertext)
+    })
+```
 
 <br />
 
@@ -141,3 +201,8 @@ GAUWLOIHFR2E52DYNEYDO6ZADIDVWZKK3U77V7PMFBNOIOBNREQBHBRR
 **cryptops** are released under the Apache License, Version 2.0. See the
 [LICENSE](https://github.com/stellar-fox/cryptops/blob/master/LICENSE)
 for more details.
+
+
+
+
+[js_toolbox]: https://www.npmjs.com/package/@xcmats/js-toolbox
