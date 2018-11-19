@@ -99,16 +99,17 @@ export const genKey = (
     pass = Uint8Array.from([]),
     salt = (new Uint8Array(32)).fill(0),
     count = 2**12
-) => func.pipe(
-    sjclMisc.pbkdf2(
-        func.compose(sjclCodec.hex.toBits, codec.bytesToHex)(pass),
-        func.compose(sjclCodec.hex.toBits, codec.bytesToHex)(salt),
-        count
+) =>
+    func.pipe(
+        sjclMisc.pbkdf2(
+            func.compose(sjclCodec.hex.toBits, codec.bytesToHex)(pass),
+            func.compose(sjclCodec.hex.toBits, codec.bytesToHex)(salt),
+            count
+        )
+    )(
+        sjclCodec.hex.fromBits,
+        codec.hexToBytes
     )
-)(
-    sjclCodec.hex.fromBits,
-    codec.hexToBytes
-)
 
 
 
@@ -364,15 +365,13 @@ export const aesEncrypt = (key, message) => {
  * @param {Uint8Array} ciphertext A content to decrypt.
  * @returns {Uint8Array} Decrypted message.
  */
-export const aesDecrypt = (key, ciphertext) => {
-    let decipher = createDecipheriv(
-        "aes-256-ctr", key, array.take(16)(ciphertext)
-    )
-    return codec.concatBytes(
-        decipher.update(array.drop(16)(ciphertext)),
-        decipher.final()
-    )
-}
+export const aesDecrypt = (key, ciphertext) => (
+    (decipher) =>
+        codec.concatBytes(
+            decipher.update(array.drop(16)(ciphertext)),
+            decipher.final()
+        )
+)(createDecipheriv("aes-256-ctr", key, array.take(16)(ciphertext)))
 
 
 
