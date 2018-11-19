@@ -349,10 +349,11 @@ export const aesEncrypt = (key, message) => {
  * @returns {Uint8Array} Decrypted message.
  */
 export const aesDecrypt = (key, ciphertext) => {
-    let iv = ciphertext.slice(0, 16),
-        decipher = createDecipheriv("aes-256-ctr", key, iv)
+    let decipher = createDecipheriv(
+        "aes-256-ctr", key, array.take(16)(ciphertext)
+    )
     return codec.concatBytes(
-        decipher.update(ciphertext.slice(16)),
+        decipher.update(array.drop(16)(ciphertext)),
         decipher.final()
     )
 }
