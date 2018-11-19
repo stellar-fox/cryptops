@@ -37,7 +37,7 @@ describe("uuid test", () => {
         assert.notDeepEqual(uuid, uuid2)
         assert.equal(uuid.length, 16)
         assert.equal(uuid2.length, 16)
-    })
+    }).timeout(t)
 
 
     it("should decode uuid", () => {
@@ -53,7 +53,7 @@ describe("uuid test", () => {
         assert.equal(decodeduuid2.uaId.length, 8)
         assert.equal(decodeduuid.rnd.length, 12)
         assert.equal(decodeduuid2.rnd.length, 12)
-    })
+    }).timeout(t)
 
 })
 
