@@ -14,7 +14,8 @@ Crypto building blocks.
 
 * [documentation](#documentation)
 * [use the source](#use-the-source)
-* [namespace](#namespaces)
+* [namespace](#namespace)
+* [tests](#tests)
 * [support](#support)
 * [license](#license)
 
@@ -91,6 +92,32 @@ cryptops
 >   passphraseEncrypt: [Function: passphraseEncrypt],
 >   passphraseDecrypt: [Function: passphraseDecrypt] }
 > ```
+
+<br />
+
+
+
+
+## tests
+
+```bash
+$ npm run test
+
+  uuid test
+    ✓ should generate uuid
+    ✓ should decode uuid
+
+  passphrase encrypt/decrypt test
+    ✓ should generate content (5386ms)
+    ✓ should encrypt (2407ms)
+    ✓ should have different ciphertexts
+    ✓ should decrypt (7258ms)
+    ✓ should match content (67ms)
+    ✓ should not decrypt with a wrong passphrase (2922ms)
+
+
+  8 passing (18s)
+```
 
 <br />
 
