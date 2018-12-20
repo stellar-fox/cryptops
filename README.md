@@ -162,21 +162,22 @@ $ cd cryptops
 $ npm i
 $ npm start
 Compiling for 'production' ...
-Hash: 8d52ae57748892e5a58f
-Version: webpack 4.25.1
-Time: 791ms
-Built at: 2018-11-19 11:04:39
+Hash: 5ea9fc51eca4ccca27b8
+Version: webpack 4.28.0
+Time: 871ms
+Built at: 2018-12-20 15:30:46
       Asset      Size  Chunks             Chunk Names
-cryptops.js  24.2 KiB       0  [emitted]  cryptops
+cryptops.js  24.6 KiB       0  [emitted]  cryptops
 Entrypoint cryptops = cryptops.js
 [0] external "@xcmats/js-toolbox" 42 bytes {0} [built]
 [1] external "sjcl" 42 bytes {0} [built]
 [2] external "tweetnacl" 42 bytes {0} [built]
 [3] external "@babel/runtime/regenerator" 42 bytes {0} [built]
-[4] external "@babel/.../asyncToGenerator" 42 bytes {0} [built]
+[4] external "@babel/runtime/helpers/asyncToGenerator" 42 bytes {0} [built]
 [5] external "crypto-browserify" 42 bytes {0} [built]
-[6] external "scrypt-js" 42 bytes {0} [built]
-[7] ./src/index.js 11.4 KiB {0} [built]
+[6] ./package.json 4.25 KiB {0} [built]
+[7] external "scrypt-js" 42 bytes {0} [built]
+[8] ./src/index.js 11.5 KiB {0} [built]
 ```
 
 <br />
@@ -211,7 +212,7 @@ cryptops
 >   decrypt: { [Function: decrypt] },
 >   passphraseEncrypt: [Function: passphraseEncrypt],
 >   passphraseDecrypt: [Function: passphraseDecrypt],
->   version: '1.0.0' }
+>   version: '1.0.2' }
 > ```
 
 <br />
@@ -274,4 +275,3 @@ for more details.
 [umdjs]: https://github.com/umdjs/umd
 [commonjs]: https://nodejs.org/docs/latest/api/modules.html#modules_modules
 [esmodules]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import
-

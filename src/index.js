@@ -219,7 +219,7 @@ export const deriveKey = (
 export const timestamp = () =>
     func.pipe(Date.now())(
         (d) => d.toString(16),
-        func.partial(func.rearg(string.padLeft)(1, 2, 0))(6*2, "0"),
+        func.rearg(string.padLeft)(1, 2, 0)(6*2, "0"),
         codec.hexToBytes
     )
 
@@ -276,7 +276,7 @@ export const decodeUUID = (uuid) => ({
     timestamp: func.pipe(uuid)(
         array.take(6),
         codec.bytesToHex,
-        func.partial(func.rearg(parseInt)(1, 0))(16),
+        func.rearg(parseInt)(1, 0)(16),
         (ms) => new Date(ms)
     ),
     uaId: func.pipe(uuid)(
