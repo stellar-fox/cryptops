@@ -77,12 +77,12 @@ Go ahead, [inspect the source][libsource] and see for yourself.
 > [RunKit with @stellar-fox/cryptops](https://npm.runkit.com/@stellar-fox/cryptops)
 
 
-* encrypting text using passphrase:
+* encrypting text using a passphrase:
 
     https://runkit.com/xcmats/cryptops.passphraseencrypt
 
 
-* decrypting text using passphrase:
+* decrypting text using a passphrase:
 
     https://runkit.com/xcmats/cryptops.passphrasedecrypt
 
