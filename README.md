@@ -162,12 +162,12 @@ $ cd cryptops
 $ npm i
 $ npm start
 Compiling for 'production' ...
-Hash: 5ea9fc51eca4ccca27b8
-Version: webpack 4.28.0
-Time: 871ms
-Built at: 2018-12-20 15:30:46
+Hash: 08e18f8cc0804cf383ee
+Version: webpack 4.28.1
+Time: 737ms
+Built at: 2018-12-21 15:12:37
       Asset      Size  Chunks             Chunk Names
-cryptops.js  24.6 KiB       0  [emitted]  cryptops
+cryptops.js  24.9 KiB       0  [emitted]  cryptops
 Entrypoint cryptops = cryptops.js
 [0] external "@xcmats/js-toolbox" 42 bytes {0} [built]
 [1] external "sjcl" 42 bytes {0} [built]
@@ -175,7 +175,7 @@ Entrypoint cryptops = cryptops.js
 [3] external "@babel/runtime/regenerator" 42 bytes {0} [built]
 [4] external "@babel/runtime/helpers/asyncToGenerator" 42 bytes {0} [built]
 [5] external "crypto-browserify" 42 bytes {0} [built]
-[6] ./package.json 4.25 KiB {0} [built]
+[6] ./package.json 4.26 KiB {0} [built]
 [7] external "scrypt-js" 42 bytes {0} [built]
 [8] ./src/index.js 11.5 KiB {0} [built]
 ```

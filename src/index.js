@@ -318,9 +318,9 @@ export const salsaNonce = () => codec.concatBytes(
  * @param {Uint8Array} message A content to encrypt.
  * @returns {Uint8Array} Initialization Vector concatenated with Ciphertext.
  */
-export const salsaEncrypt = (key, message) => (
+export const salsaEncrypt = func.curry((key, message) => (
     (iv) => codec.concatBytes(iv, naclSecretbox(message, iv, key))
-)(salsaNonce())
+)(salsaNonce()))
 
 
 
@@ -335,12 +335,13 @@ export const salsaEncrypt = (key, message) => (
  * @param {Uint8Array} ciphertext A content to decrypt.
  * @returns {(Uint8Array|null)} Decrypted message or null.
  */
-export const salsaDecrypt = (key, ciphertext) =>
+export const salsaDecrypt = func.curry((key, ciphertext) =>
     naclSecretbox.open(
         array.drop(naclSecretbox.nonceLength)(ciphertext),
         array.take(naclSecretbox.nonceLength)(ciphertext),
         key
     )
+)
 
 
 
@@ -367,11 +368,11 @@ export const aesNonce = () => random(16)
  * @param {Uint8Array} message A content to encrypt.
  * @returns {Uint8Array} Initialization Vector concatenated with Ciphertext.
  */
-export const aesEncrypt = (key, message) => {
+export const aesEncrypt = func.curry((key, message) => {
     let iv = aesNonce(),
         cipher = createCipheriv("aes-256-ctr", key, iv)
     return codec.concatBytes(iv, cipher.update(message), cipher.final())
-}
+})
 
 
 
@@ -387,13 +388,13 @@ export const aesEncrypt = (key, message) => {
  * @param {Uint8Array} ciphertext A content to decrypt.
  * @returns {Uint8Array} Decrypted message.
  */
-export const aesDecrypt = (key, ciphertext) => (
+export const aesDecrypt = func.curry((key, ciphertext) => (
     (decipher) =>
         codec.concatBytes(
             decipher.update(array.drop(16)(ciphertext)),
             decipher.final()
         )
-)(createDecipheriv("aes-256-ctr", key, array.take(16)(ciphertext)))
+)(createDecipheriv("aes-256-ctr", key, array.take(16)(ciphertext))))
 
 
 
@@ -438,7 +439,7 @@ const encdec = Object.freeze({
  * @param {Uint8Array} message A content to encrypt.
  * @returns {Uint8Array} [MAGIC] + [VERSION] + [AES IV] + [Ciphertext].
  */
-export const encrypt = (key, message) => {
+export const encrypt = func.curry((key, message) => {
     if (
         !type.isNumber(key.BYTES_PER_ELEMENT)  ||
         !type.isNumber(message.BYTES_PER_ELEMENT)  ||
@@ -458,7 +459,7 @@ export const encrypt = (key, message) => {
             func.partial(aesEncrypt)(array.drop(32)(key))
         )
     )
-}
+})
 Object.freeze(Object.assign(encrypt, encdec))
 
 
@@ -490,7 +491,7 @@ Object.freeze(Object.assign(encrypt, encdec))
  * @returns {Uint8Array|Null} byte representation
  *      of a decrypted content or `null` if decryption is not possible.
  */
-export const decrypt = (key, ciphertext) => {
+export const decrypt = func.curry((key, ciphertext) => {
     if (
         !type.isNumber(key.BYTES_PER_ELEMENT)  ||
         !type.isNumber(ciphertext.BYTES_PER_ELEMENT)  ||
@@ -514,7 +515,7 @@ export const decrypt = (key, ciphertext) => {
         func.partial(aesDecrypt)(array.drop(32)(key)),
         func.partial(salsaDecrypt)(array.take(32)(key))
     )
-}
+})
 Object.freeze(Object.assign(decrypt, encdec))
 
 
