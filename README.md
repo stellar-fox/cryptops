@@ -162,7 +162,7 @@ $ cd cryptops
 $ npm i
 $ npm start
 Compiling for 'production' ...
-Hash: 08e18f8cc0804cf383ee
+Hash: 2bdffa777f3a1b5775b0
 Version: webpack 4.28.1
 Time: 737ms
 Built at: 2018-12-21 15:12:37
@@ -173,7 +173,7 @@ Entrypoint cryptops = cryptops.js
 [1] external "sjcl" 42 bytes {0} [built]
 [2] external "tweetnacl" 42 bytes {0} [built]
 [3] external "@babel/runtime/regenerator" 42 bytes {0} [built]
-[4] external "@babel/runtime/helpers/asyncToGenerator" 42 bytes {0} [built]
+[4] external "@babel/.../asyncToGenerator" 42 bytes {0} [built]
 [5] external "crypto-browserify" 42 bytes {0} [built]
 [6] ./package.json 4.26 KiB {0} [built]
 [7] external "scrypt-js" 42 bytes {0} [built]
@@ -212,7 +212,7 @@ cryptops
 >   decrypt: { [Function: decrypt] },
 >   passphraseEncrypt: [Function: passphraseEncrypt],
 >   passphraseDecrypt: [Function: passphraseDecrypt],
->   version: '1.0.2' }
+>   version: '1.0.4' }
 > ```
 
 <br />
