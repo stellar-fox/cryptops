@@ -212,7 +212,7 @@ cryptops
 >   decrypt: { [Function: decrypt] },
 >   passphraseEncrypt: [Function: passphraseEncrypt],
 >   passphraseDecrypt: [Function: passphraseDecrypt],
->   version: '1.0.4' }
+>   version: '1.0.5' }
 > ```
 
 <br />
