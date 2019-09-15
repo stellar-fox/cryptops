@@ -248,9 +248,11 @@ $ npm run test
 
 ## support
 
-```
-GAUWLOIHFR2E52DYNEYDO6ZADIDVWZKK3U77V7PMFBNOIOBNREQBHBRR
-```
+You can support this project via [stellar][stellar] network:
+
+* Payment address: [xcmats*keybase.io][xcmatspayment]
+* Stellar account ID: [`GBYUN4PMACWBJ2CXVX2KID3WQOONPKZX2UL4J6ODMIRFCYOB3Z3C44UZ`][addressproof]
+
 
 <br />
 
@@ -275,3 +277,6 @@ for more details.
 [umdjs]: https://github.com/umdjs/umd
 [commonjs]: https://nodejs.org/docs/latest/api/modules.html#modules_modules
 [esmodules]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import
+[stellar]: https://learn.stellar.org
+[xcmatspayment]: https://keybase.io/xcmats
+[addressproof]: https://keybase.io/xcmats/sigchain#d0999a36b501c4818c15cf813f5a53da5bfe437875d92262be8d285bbb67614e22
