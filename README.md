@@ -162,10 +162,10 @@ $ cd cryptops
 $ npm i
 $ npm start
 Compiling for 'production' ...
-Hash: 2bdffa777f3a1b5775b0
-Version: webpack 4.28.1
-Time: 737ms
-Built at: 2018-12-21 15:12:37
+Hash: b6a8d4e126caf6f893b8
+Version: webpack 4.40.2
+Time: 2988ms
+Built at: 09/15/2019 5:14:14 PM
       Asset      Size  Chunks             Chunk Names
 cryptops.js  24.9 KiB       0  [emitted]  cryptops
 Entrypoint cryptops = cryptops.js
@@ -173,7 +173,7 @@ Entrypoint cryptops = cryptops.js
 [1] external "sjcl" 42 bytes {0} [built]
 [2] external "tweetnacl" 42 bytes {0} [built]
 [3] external "@babel/runtime/regenerator" 42 bytes {0} [built]
-[4] external "@babel/.../asyncToGenerator" 42 bytes {0} [built]
+[4] external "@babel/runtime/helpers/asyncToGenerator" 42 bytes {0} [built]
 [5] external "crypto-browserify" 42 bytes {0} [built]
 [6] ./package.json 4.26 KiB {0} [built]
 [7] external "scrypt-js" 42 bytes {0} [built]
@@ -252,7 +252,6 @@ You can support this project via [stellar][stellar] network:
 
 * Payment address: [xcmats*keybase.io][xcmatspayment]
 * Stellar account ID: [`GBYUN4PMACWBJ2CXVX2KID3WQOONPKZX2UL4J6ODMIRFCYOB3Z3C44UZ`][addressproof]
-
 
 <br />
 
