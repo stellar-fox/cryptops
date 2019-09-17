@@ -173,7 +173,7 @@ Entrypoint cryptops = cryptops.js
 [1] external "sjcl" 42 bytes {0} [built]
 [2] external "tweetnacl" 42 bytes {0} [built]
 [3] external "@babel/runtime/regenerator" 42 bytes {0} [built]
-[4] external "@babel/runtime/helpers/asyncToGenerator" 42 bytes {0} [built]
+[4] external "@babel/runtime/helpers/asyncToGenerator" ...
 [5] external "crypto-browserify" 42 bytes {0} [built]
 [6] ./package.json 4.26 KiB {0} [built]
 [7] external "scrypt-js" 42 bytes {0} [built]
@@ -212,7 +212,7 @@ cryptops
 >   decrypt: { [Function: decrypt] },
 >   passphraseEncrypt: [Function: passphraseEncrypt],
 >   passphraseDecrypt: [Function: passphraseDecrypt],
->   version: '1.0.5' }
+>   version: '1.0.6' }
 > ```
 
 <br />
