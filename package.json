@@ -51,7 +51,7 @@
         "mocha": "^6.2.0",
         "rimraf": "^3.0.0",
         "webpack": "^4.40.2",
-        "webpack-cli": "^3.3.8",
+        "webpack-cli": "^3.3.9",
         "webpack-node-externals": "^1.7.2"
     },
     "engines": {
@@ -114,5 +114,5 @@
         "test": "npm run lint && mocha"
     },
     "typings": "typings/cryptops.d.ts",
-    "version": "1.0.5"
+    "version": "1.0.6"
 }
