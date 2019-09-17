@@ -1,7 +1,12 @@
 {
-    "plugins": ["plugins/markdown"],
     "opts": {
         "encoding": "utf8",
         "template": "node_modules/minami"
+    },
+    "plugins": ["plugins/commentsOnly", "plugins/markdown"],
+    "sourceType": "module",
+    "tags": {
+        "allowUnknownTags": true,
+        "dictionaries": ["jsdoc"]
     }
 }
